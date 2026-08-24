@@ -85,6 +85,10 @@ labels bound inside a shape wrap on their own.
 
 ## Traps
 
+- **Clipped text after a build.** Excalifont loads asynchronously, and text
+  measured before it lands is stored ~13% too narrow, so it renders past its
+  own bounds. `buildFromSkeleton()` awaits `document.fonts.ready`; if you
+  bypass it, wait for fonts yourself.
 - **Overflowing labels.** Long text in a fixed-height box silently overflows.
   Either shorten it or use `align: 'start'` with a taller box, then look at the
   render.

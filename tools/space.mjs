@@ -49,13 +49,13 @@ const FONT_SIZE = { s: 16, m: 20, l: 28, xl: 36 }
 const stroke = (c) => STROKE[c] ?? STROKE.black
 
 // Excalidraw does not re-flow a standalone text element to a target width, so
-// wrap it ourselves. 0.45em per character slightly over-estimates the real
-// average (~0.41em measured), which errs toward shorter lines rather than
-// overflow.
+// wrap it ourselves. Excalifont averages ~0.50em per character (measured: 99
+// chars at 20px renders 998px). 0.52 leaves a margin so lines land inside the
+// target width rather than spilling past it.
 function wrapText(text, width, fontSize) {
   if (!width) return text
   const NL = String.fromCharCode(10)
-  const perLine = Math.max(8, Math.floor(width / (fontSize * 0.45)))
+  const perLine = Math.max(8, Math.floor(width / (fontSize * 0.52)))
   return text
     .split(NL)
     .map((paragraph) => {

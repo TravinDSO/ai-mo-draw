@@ -76,6 +76,11 @@ export default function App() {
     // Expands public/skeleton.json (written by tools/) into real elements.
     // Text sizing needs font metrics, which only exist in the browser.
     window.buildFromSkeleton = async () => {
+      // Excalifont loads asynchronously. Converting before it is ready measures
+      // text with fallback metrics, so every text element is stored too narrow
+      // and then renders wider than its own bounds (clipped labels, clipped
+      // exports). Wait for the real font first.
+      await document.fonts.ready
       const skeleton = await fetch('/skeleton.json?t=' + Date.now()).then((r) => r.json())
       const elements = ExcalidrawLib.convertToExcalidrawElements(skeleton)
       api.updateScene({ elements })

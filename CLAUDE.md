@@ -87,6 +87,11 @@ presenting one finished board at the end.
   ignores its own echo. Without that, edits vanish silently — the client
   reloads stale content over the write it just made. Preserve this if you touch
   the sync code.
+- **Webfonts must be loaded before text is measured.** Excalifont loads
+  asynchronously; converting a skeleton before it lands measures text with
+  fallback metrics, storing every text element ~13% too narrow. It then renders
+  wider than its own bounds and exports clipped. `buildFromSkeleton()` awaits
+  `document.fonts.ready` for this reason — keep that.
 - **Standalone text does not re-flow to a width.** `tools/space.mjs` hard-wraps
   it; labels bound inside a shape wrap on their own.
 - **`cacheDir` points outside the project on purpose.** Cloud-synced folders
