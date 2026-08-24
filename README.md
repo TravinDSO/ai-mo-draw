@@ -39,6 +39,23 @@ This matters more than it looks: without it, the change notification can outrun
 the client's own save response, so the client sees an unfamiliar timestamp and
 reloads stale content over the edit it just made. Edits vanish silently.
 
+## Using it with Claude Code
+
+Clone it, open Claude Code in the directory, and say what you want to sketch.
+
+`CLAUDE.md` and three skills in `.claude/skills/` ship with the repo, so the
+session already knows how to start the server, generate a board, look at the
+result, and read what you drew:
+
+| Skill | Covers |
+|---|---|
+| `mo-draw` | Starting a session and the collaboration loop |
+| `mo-draw-author` | Generating boards from a script, plus layout conventions |
+| `mo-draw-inspect` | Rendering the board to view it, and reading your edits |
+
+`.claude/launch.json` defines the dev-server entry, so the agent can start Vite
+and open the browser tab in one step.
+
 ## Generating boards from a script
 
 Text sizing needs font metrics that only exist in a browser, so generation is
