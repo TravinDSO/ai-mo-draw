@@ -27,7 +27,7 @@ function json(res, code, body) {
 // outside the browser).
 function docApi() {
   return {
-    name: 'excalidraw-space-doc-api',
+    name: 'ai-mo-draw-doc-api',
     configureServer(server) {
       const clients = new Set()
       let debounce = null
@@ -106,7 +106,7 @@ export default defineConfig({
   // Keep the high-churn dependency cache out of the project tree. Cloud-synced
   // folders (Dropbox, OneDrive, iCloud) lock files while indexing them, which
   // makes Vite's dependency optimizer fail its atomic rename with EBUSY.
-  cacheDir: path.join(os.tmpdir(), 'excalidraw-space-vite'),
+  cacheDir: path.join(os.tmpdir(), 'ai-mo-draw-vite'),
   define: { 'process.env.IS_PREACT': JSON.stringify('false') },
   server: {
     port: 5200,

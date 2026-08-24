@@ -1,5 +1,5 @@
 {
-  "name": "excalidraw-space",
+  "name": "ai-mo-draw",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,5 +23,9 @@
     "canvas",
     "diagrams",
     "agents"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TravinDSO/ai-mo-draw.git"
+  }
 }

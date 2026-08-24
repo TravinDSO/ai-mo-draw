@@ -50,7 +50,7 @@ export default function App() {
     const body = {
       type: 'excalidraw',
       version: 2,
-      source: 'excalidraw-space',
+      source: 'ai-mo-draw',
       elements: elements.filter((el) => !el.isDeleted),
       appState: persistableAppState(appState),
       files: files ?? {},

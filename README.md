@@ -1,4 +1,4 @@
-# excalidraw space
+# ai-mo-draw
 
 A local [Excalidraw](https://excalidraw.com) canvas whose document is a plain
 JSON file on disk — so a person can draw in the browser while a script (or a
