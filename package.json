@@ -1,0 +1,27 @@
+{
+  "name": "excalidraw-space",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.0",
+    "vite": "^8.2.2"
+  },
+  "description": "A local Excalidraw canvas backed by a plain JSON file, so humans and coding agents can edit the same board.",
+  "license": "MIT",
+  "keywords": [
+    "excalidraw",
+    "whiteboard",
+    "canvas",
+    "diagrams",
+    "agents"
+  ]
+}

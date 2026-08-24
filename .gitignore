@@ -1,0 +1,10 @@
+node_modules/
+
+# Generated: `node tools/build-boards.mjs` rebuilds this.
+public/skeleton.json
+
+# Your canvas. The app creates it on first save; it is yours, not the project's.
+space.excalidraw
+
+# Rendered PNGs from POST /api/export.
+exports/
